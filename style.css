@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+	font-size: 62.5%;
+
+    --ff-form: 'Poppins', sans-serif;
+    
+    --bc-main: hsla(40, 6%, 9%, 1);
+    --bc-form-desk: hsla(40, 7%, 13%, 1);
+    --fc-heading: hsla(44, 26%, 77%, 1);
+    --fc-texting: hsla(218, 14%, 72%, 1);
+    --highlight: hsla(43, 100%, 60%, 1);
+    --border-input: hsla(0, 0%, 52%, 1);
+}
+body {
+    font-family: var(--ff-form);
+    color: var(--fc-texting);
+
+    background-color: var(--bc-main);
+
+}
+.page {
+    max-width: 425px;
+    margin: 0 auto;
+}
+header {
+    margin: 4rem 2rem 2rem;
+}
+main {
+    margin: 0 2rem 2rem;
+}
+fieldset {
+    border: none;
+}
+.legend {
+    display: flex;
+    gap: 1rem; 
+}
+legend {
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    color: var(--fc-heading);
+}
+.subtitle {
+    font-weight: 400;
+    font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem); 
+    line-height: 2.4rem;
+    margin: 0 0 2.7rem;
+    color: var(--fc-texting);
+}
+.input-wrap {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2rem;
+    position: relative;
+}
+.input-wrap label,
+.checkbox-wrap label {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    padding: 0 0 5px;
+}
+.input-wrap input {
+    border: 1px solid var(--border-input);
+    border-radius: 4px;
+    padding: 1.2rem 1.2rem 1.2rem 3.7rem;
+    background-color: transparent;
+    appearance: none;
+    color: var(--fc-texting);
+
+}
+.focus {
+    display: none;
+}
+.input-wrap input:focus {
+    outline: 2px solid var(--highlight);
+}
+
+.input-wrap input::placeholder {
+    font-size: 1.4rem;
+    font-family: var(--ff-form);
+    color: var(--fc-texting);
+}
+
+main > img {
+    display: none;
+}
+.input-wrap svg {
+    position: absolute;
+    top: 55%;
+    left: 1.2rem;
+}
+.remember {
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+}
+.checkbox-wrap {
+    position: relative;
+}
+.checkbox-wrap input {
+    opacity: 0;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+}
+.checkbox-wrap label {
+    display: flex;
+    gap: 5px;
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+.checkbox-wrap label::before {
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    border: 1px solid var(--border-input);
+    border-radius: 4px;
+}
+.checkbox-wrap input:checked + label::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_301_298)'%3E%3Crect x='0.5' y='0.5' width='19' height='19' rx='3.5' fill='%23FFC632' stroke='%23FFC632'/%3E%3Cpath d='M16.6667 5L7.50004 14.1667L3.33337 10' stroke='%23473404' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_301_298'%3E%3Crect width='20' height='20' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+.checkbox-wrap input:focus + label::before {
+    outline: 1px solid var(--highlight);
+}
+button {
+    background-color: var(--highlight);
+    width: 100%;
+    padding: 1.2rem 0;
+    border-radius: 4px;
+    border: none;
+    margin: 2rem 0 1.4rem;
+
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: var(--ff-form);
+    line-height: 2.7rem;
+}
+.no-account {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 400;
+    color: var(--highlight);
+
+    text-align: center;
+}
+a {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: var(--highlight);
+    text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+    .page {
+        max-width: 4000px;
+        margin: 0;
+    }
+    main > img {
+        display: block;
+        width: 50%;
+        height: 100vh;
+        object-fit: cover;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    form {
+        background-color: var(--bc-form-desk);
+        width: 40%;
+        padding: 10rem 5rem;
+        margin: 7rem;
+        max-width: 800px;
+    }
+    
+}
